@@ -1,6 +1,6 @@
 {
   "name": "helper-lookup",
-  "description": "Template helper for generating a list of markdown formatted reference links to github repos for the tree of dependencies and devDependencies listed in package.json.",
+  "description": "Collection of template helpers for the methods in lookup-deps.",
   "version": "0.2.0",
   "homepage": "https://github.com/helpers/helper-lookup",
   "author": {
