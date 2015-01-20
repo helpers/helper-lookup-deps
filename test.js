@@ -10,11 +10,11 @@
 var should = require('should');
 var handlebars = require('handlebars');
 var _ = require('lodash');
-var lookup = require('./')();
+var lookup = require('./');
 
 function test(str) {
   // is there text?
-  return /[abc]/.test(str);
+  return /[a-zA-Z]/.test(str);
 }
 
 describe('helper lookup', function () {
@@ -37,20 +37,18 @@ describe('helper lookup', function () {
     test(_.template('<%= _.reflinks("*") %>', {})).should.be.true;
   });
 
-  // it('should work as a handlebars helper:', function () {
-  //   handlebars.registerHelper(lookup);
-  //   // console.log(handlebars.compile('{{reflinks "*"}}')())
-  //   console.log(handlebars.compile('{{links "*"}}')())
-  //   // test(handlebars.compile('{{reflinks "*"}}')()).should.be.true;
-  // });
+  it('should work as a handlebars helper:', function () {
+    handlebars.registerHelper(lookup);
+    test(handlebars.compile('{{reflinks "*"}}')()).should.be.true;
+  });
 
-  // it('should work as a handlebars helper:', function () {
-  //   handlebars.registerHelper('reflinks', lookup.reflinks);
-  //   test(handlebars.compile('{{reflinks "*"}}')()).should.be.true;
-  // });
+  it('should work as a handlebars helper:', function () {
+    handlebars.registerHelper('a', lookup.links);
+    test(handlebars.compile('{{a "*"}}')()).should.match(/for-own/);
+  });
 
-  // it('should work as a handlebars helper:', function () {
-  //   handlebars.registerHelper('links', lookup.links);
-  //   test(handlebars.compile('{{links "*"}}')()).should.be.true;
-  // });
+  it('should work as a handlebars helper:', function () {
+    handlebars.registerHelper(lookup);
+    test(handlebars.compile('{{links "*"}}')()).should.be.true;
+  });
 });
