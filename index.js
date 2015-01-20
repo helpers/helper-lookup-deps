@@ -10,18 +10,58 @@
 var Lookup = require('lookup-deps');
 var deps = new Lookup();
 
-module.exports = function (options) {
-  var helpers = {};
+exports.depsKeys = function(patterns) {
+  return deps.depsKeys(patterns || '*');
+};
 
-  for (var key in deps) {
-    var fn = deps[key];
+exports.findPkg = function(patterns) {
+  return deps.findPkg(patterns || '*');
+};
 
-    if (typeof fn === 'function') {
-      helpers[key] = function () {
-        return fn.apply(deps, arguments);
-      };
-    }
-  }
+exports.parent = function(patterns) {
+  return deps.parent(patterns || '*');
+};
 
-  return helpers;
+exports.filter = function(patterns) {
+  return deps.filter(patterns || '*');
+};
+
+exports.getParents = function(patterns) {
+  return deps.getParents(patterns || '*');
+};
+
+exports.names = function(patterns) {
+  return deps.names(patterns || '*');
+};
+
+exports.find = function(patterns) {
+  return deps.find(patterns || '*');
+};
+
+exports.lookup = function(patterns) {
+  return deps.lookup(patterns || '*');
+};
+
+exports.pkg = function(patterns) {
+  return deps.pkg(patterns || '*');
+};
+
+exports.dependencies = function(patterns) {
+  return deps.dependencies(patterns || '*');
+};
+
+exports.keywords = function(patterns) {
+  return deps.keywords(patterns || '*');
+};
+
+exports.homepage = function(patterns) {
+  return deps.homepage(patterns || '*');
+};
+
+exports.links = function(patterns) {
+  return deps.links(patterns || '*');
+};
+
+exports.reflinks = function(patterns) {
+  return deps.reflinks(patterns || '*');
 };
