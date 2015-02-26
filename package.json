@@ -1,29 +1,32 @@
 {
-  "name": "helper-lookup",
+  "name": "helper-lookup-deps",
   "description": "Collection of template helpers for the methods in lookup-deps.",
   "version": "0.2.0",
-  "homepage": "https://github.com/helpers/helper-lookup",
+  "homepage": "https://github.com/helpers/helper-lookup-deps",
   "author": {
     "name": "Jon Schlinkert",
     "url": "https://github.com/jonschlinkert"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/helpers/helper-lookup.git"
+    "url": "git://github.com/helpers/helper-lookup-deps.git"
   },
   "bugs": {
-    "url": "https://github.com/helpers/helper-lookup/issues"
+    "url": "https://github.com/helpers/helper-lookup-deps/issues"
   },
   "license": {
     "type": "MIT",
-    "url": "https://github.com/helpers/helper-lookup/blob/master/LICENSE"
+    "url": "https://github.com/helpers/helper-lookup-deps/blob/master/LICENSE"
   },
+  "files": [
+    "index.js"
+  ],
   "main": "index.js",
   "engines": {
     "node": ">=0.10.0"
   },
   "scripts": {
-    "test": "mocha -R spec"
+    "test": "mocha"
   },
   "dependencies": {
     "lookup-deps": "^0.3.0"
@@ -32,7 +35,7 @@
     "handlebars": "^2.0.0",
     "lodash": "^2.4.1",
     "should": "^4.6.1",
-    "verb": "^0.3.9"
+    "verb": "^0.5.0"
   },
   "keywords": [
     "docs",

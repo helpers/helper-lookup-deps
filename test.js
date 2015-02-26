@@ -1,8 +1,8 @@
 /*!
- * helper-lookup <https://github.com/jonschlinkert/helper-lookup>
+ * helper-lookup-deps <https://github.com/helpers/helper-lookup-deps>
  *
  * Copyright (c) 2014-2015, Jon Schlinkert.
- * Licensed under the MIT License
+ * Licensed under the MIT License.
  */
 
 'use strict';
